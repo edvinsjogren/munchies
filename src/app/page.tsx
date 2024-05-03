@@ -24,20 +24,15 @@ export default async function Home() {
 
   return (
     <>
-      {!splashCookie ? (
-        <SplashModal />
-      ) : (
-        <>
-          <Logo color="black" />
-          <div className="flex w-full gap-5">
-            <Sidebar categories={categories} />
-            <div className="flex w-full flex-col gap-6">
-              <Topbar categories={categories} />
-              <RestaurantGrid restaurants={restaurants} />
-            </div>
-          </div>
-        </>
-      )}
+      {!splashCookie && <SplashModal />}
+      <Logo color="black" />
+      <div className="flex w-full gap-5">
+        <Sidebar categories={categories} />
+        <div className="flex w-full flex-col gap-6">
+          <Topbar categories={categories} />
+          <RestaurantGrid restaurants={restaurants} />
+        </div>
+      </div>
     </>
   );
 }
