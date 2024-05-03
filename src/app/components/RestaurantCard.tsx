@@ -43,6 +43,7 @@ function RestaurantCard({
         p-4
         shadow-box-shadows
         ${isCurrentlyOpen ? 'cursor-pointer' : 'cursor-default'}
+        ${isCurrentlyOpen && 'hover:bg-off-white'}
         `}
     >
       <StatusBadge

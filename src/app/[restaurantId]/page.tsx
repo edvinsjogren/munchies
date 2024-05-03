@@ -25,7 +25,7 @@ export default async function RestaurantDetails({ params }: Props) {
   return (
     <>
       <Logo color="black" />
-      <div className="flex h-full flex-col justify-between gap-8 lg:mx-auto lg:w-max lg:justify-center">
+      <div className="flex h-full flex-col justify-between gap-8 lg:mx-auto lg:w-96 lg:justify-center">
         <div className="flex flex-col gap-3">
           <Link
             href="/"
@@ -60,7 +60,7 @@ export default async function RestaurantDetails({ params }: Props) {
         />
         <button
           disabled
-          className="mx-auto w-full rounded-lg border-small border-white bg-green py-5 text-center text-white opacity-50 shadow-box-shadows transition"
+          className="mx-auto w-full rounded-lg border-small border-white bg-green py-5 text-center leading-none text-white opacity-50 shadow-box-shadows transition"
         >
           Order
         </button>
