@@ -41,7 +41,7 @@ function Topbar({ categories }: TopbarProps) {
           ))}
         </div>
       </div>
-      <div className="scrollbar-hide -ml-6 flex w-screen gap-2 overflow-x-scroll scroll-smooth whitespace-nowrap pl-6 md:ml-0 md:w-full md:flex-wrap md:overflow-auto md:pl-0">
+      <div className="scrollbar-hide -ml-6 flex w-screen gap-2 overflow-x-scroll scroll-smooth whitespace-nowrap pl-6 md:ml-0 md:w-full md:flex-wrap md:overflow-hidden md:pl-0">
         {categories.map((category) => (
           <FilterCard
             key={category.id}
