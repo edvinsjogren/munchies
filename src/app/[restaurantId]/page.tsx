@@ -54,9 +54,11 @@ export default async function RestaurantDetails({ params }: Props) {
         <Image
           src="/images/rick-rolled.gif"
           alt="You just got rick-rolled"
-          width={200}
-          height={200}
+          width={0}
+          height={0}
           className="mx-auto"
+          priority
+          style={{ width: 200, height: 'auto' }}
         />
         <button
           disabled
