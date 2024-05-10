@@ -2,7 +2,7 @@
 import NextAdapterApp from 'next-query-params/app';
 import { QueryParamProvider } from 'use-query-params';
 import './globals.css';
-import { sanfrancisco } from '../utils/font_utils';
+import { sanfrancisco } from './utils/font_utils';
 import { Suspense } from 'react';
 
 export default function RootLayout({
