@@ -4,7 +4,7 @@ import TextSubtitle from './typography/TextSubtitle';
 import FilterButton from './FilterButton';
 import { useFilterParams } from '../hooks/useFilterParams';
 import Filter from '../types/Filter';
-import { deliveryTimeRanges, priceRanges } from '../../utils/filter_utils';
+import { deliveryTimeRanges, priceRanges } from '../utils/filter_utils';
 
 interface SidebarProps {
   categories: Filter[];

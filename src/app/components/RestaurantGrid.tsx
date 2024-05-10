@@ -2,7 +2,7 @@
 import { Restaurant } from '../types/Restaurant';
 import RestaurantCard from './RestaurantCard';
 import { useFilterParams } from '../hooks/useFilterParams';
-import { getDeliveryTimeRange, getPriceRange } from '../../utils/filter_utils';
+import { getDeliveryTimeRange, getPriceRange } from '../utils/filter_utils';
 import TextTitle from './typography/TextTitle';
 import TextDisplay from './typography/TextDisplay';
 

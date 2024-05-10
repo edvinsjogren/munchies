@@ -1,7 +1,7 @@
 'use client';
 import TextTitle from './typography/TextTitle';
 import Image from 'next/image';
-import { getFilterStyles } from '../../utils/style_utils';
+import { getFilterStyles } from '../utils/style_utils';
 
 interface FilterCardProps {
   name: string;
