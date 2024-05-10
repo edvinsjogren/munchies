@@ -1,4 +1,4 @@
-export default interface Filter {
+export interface Filter {
   id: string;
   name: string;
   image_url: string;

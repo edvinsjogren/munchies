@@ -1,4 +1,4 @@
-import Filter from '../types/Filter';
+import { Filter } from '../types/Filter';
 import { Restaurant } from '../types/Restaurant';
 import fetchWrapper from './fetchWrapper';
 
