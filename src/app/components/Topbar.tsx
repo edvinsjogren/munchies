@@ -1,6 +1,6 @@
 'use client';
 import FilterCard from './FilterCard';
-import Filter from '../types/Filter';
+import { Filter } from '../types/Filter';
 import { useFilterParams } from '../hooks/useFilterParams';
 import TextSubtitle from './typography/TextSubtitle';
 import { deliveryTimeRanges, priceRanges } from '../utils/filter_utils';
