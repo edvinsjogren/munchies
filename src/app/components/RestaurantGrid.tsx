@@ -1,7 +1,7 @@
 'use client';
 import { Restaurant } from '../types/Restaurant';
 import RestaurantCard from './RestaurantCard';
-import { useFilterParams } from '../hooks/useFilterParams';
+import { useFilters } from '../context/FilterContext';
 import { getDeliveryTimeRange, getPriceRange } from '../utils/filter_utils';
 import TextTitle from './typography/TextTitle';
 import TextDisplay from './typography/TextDisplay';
@@ -11,7 +11,7 @@ interface RestaurantGridProps {
 }
 
 function RestaurantGrid({ restaurants }: RestaurantGridProps) {
-  const { filters } = useFilterParams();
+  const { filters } = useFilters();
 
   const filteredRestaurants = restaurants.filter((restaurant) => {
     const { deliveryTimeValue } = getDeliveryTimeRange(
