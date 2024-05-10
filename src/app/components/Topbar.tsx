@@ -3,7 +3,7 @@ import FilterCard from './FilterCard';
 import Filter from '../types/Filter';
 import { useFilterParams } from '../hooks/useFilterParams';
 import TextSubtitle from './typography/TextSubtitle';
-import { deliveryTimeRanges, priceRanges } from '../../utils/filter_utils';
+import { deliveryTimeRanges, priceRanges } from '../utils/filter_utils';
 import FilterButton from './FilterButton';
 
 interface TopbarProps {

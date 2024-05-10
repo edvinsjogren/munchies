@@ -1,4 +1,4 @@
-import { getDeliveryTimeRange } from '../../utils/filter_utils';
+import { getDeliveryTimeRange } from '../utils/filter_utils';
 import TextBody from './typography/TextBody';
 
 interface StatusBadgeProps {
