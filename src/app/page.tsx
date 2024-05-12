@@ -1,6 +1,4 @@
 import { fetchRestaurants, fetchFilters } from './api/api';
-import { cookies } from 'next/headers';
-import SplashModal from './components/SplashModal';
 import { Metadata } from 'next';
 import Home from './pages/Home';
 
@@ -17,12 +15,6 @@ export const metadata: Metadata = {
 export default async function App() {
   const restaurants = await fetchRestaurants();
   const categories = await fetchFilters();
-  const splashCookie = cookies().get('splash');
 
-  return (
-    <>
-      {!splashCookie && <SplashModal />}
-      <Home restaurants={restaurants} categories={categories} />
-    </>
-  );
+  return <Home restaurants={restaurants} categories={categories} />;
 }
