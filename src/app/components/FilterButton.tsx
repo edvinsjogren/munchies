@@ -1,5 +1,5 @@
 'use client';
-import { getFilterStyles } from '../../utils/style_utils';
+import { getFilterStyles } from '../utils/style_utils';
 import TextBody from './typography/TextBody';
 
 interface FilterButtonProps {

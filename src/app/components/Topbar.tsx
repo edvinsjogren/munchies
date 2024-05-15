@@ -1,9 +1,9 @@
 'use client';
 import FilterCard from './FilterCard';
-import Filter from '../types/Filter';
-import { useFilterParams } from '../hooks/useFilterParams';
+import { Filter } from '../types/Filter';
+import { useFilters } from '../context/FilterContext';
 import TextSubtitle from './typography/TextSubtitle';
-import { deliveryTimeRanges, priceRanges } from '../../utils/filter_utils';
+import { deliveryTimeRanges, priceRanges } from '../utils/filter_utils';
 import FilterButton from './FilterButton';
 
 interface TopbarProps {
@@ -11,7 +11,7 @@ interface TopbarProps {
 }
 
 function Topbar({ categories }: TopbarProps) {
-  const { toggleFilter, isFilterActive } = useFilterParams();
+  const { toggleFilter, isFilterActive } = useFilters();
 
   return (
     <div className="flex flex-col gap-6">
@@ -22,8 +22,8 @@ function Topbar({ categories }: TopbarProps) {
             <FilterButton
               key={range.value}
               name={range.label}
-              isActive={isFilterActive.deliveryTime(range.value)}
-              toggleFilter={() => toggleFilter.deliveryTime(range.value)}
+              isActive={isFilterActive('deliveryTime', range.value)}
+              toggleFilter={() => toggleFilter('deliveryTime', range.value)}
             />
           ))}
         </div>
@@ -35,8 +35,8 @@ function Topbar({ categories }: TopbarProps) {
             <FilterButton
               key={range.value}
               name={range.label}
-              isActive={isFilterActive.priceRange(range.value)}
-              toggleFilter={() => toggleFilter.priceRange(range.value)}
+              isActive={isFilterActive('priceRange', range.value)}
+              toggleFilter={() => toggleFilter('priceRange', range.value)}
             />
           ))}
         </div>
@@ -48,8 +48,8 @@ function Topbar({ categories }: TopbarProps) {
             name={category.name}
             img={category.image_url}
             alt={`${category.name} category image`}
-            isActive={isFilterActive.foodCategory(category.id)}
-            toggleFilter={() => toggleFilter.foodCategory(category.id)}
+            isActive={isFilterActive('foodCategory', category.id)}
+            toggleFilter={() => toggleFilter('foodCategory', category.id)}
           />
         ))}
       </div>

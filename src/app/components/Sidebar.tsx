@@ -2,16 +2,16 @@
 import TextH1 from './typography/TextH1';
 import TextSubtitle from './typography/TextSubtitle';
 import FilterButton from './FilterButton';
-import { useFilterParams } from '../hooks/useFilterParams';
-import Filter from '../types/Filter';
-import { deliveryTimeRanges, priceRanges } from '../../utils/filter_utils';
+import { useFilters } from '../context/FilterContext';
+import { Filter } from '../types/Filter';
+import { deliveryTimeRanges, priceRanges } from '../utils/filter_utils';
 
 interface SidebarProps {
   categories: Filter[];
 }
 
 function Sidebar({ categories }: SidebarProps) {
-  const { toggleFilter, isFilterActive } = useFilterParams();
+  const { toggleFilter, isFilterActive } = useFilters();
 
   return (
     <div className="hidden w-60 flex-col gap-8 rounded-[10px] border-small border-stroke bg-white p-6 shadow-box-shadows lg:flex">
@@ -24,8 +24,8 @@ function Sidebar({ categories }: SidebarProps) {
             <FilterButton
               key={category.id}
               name={category.name}
-              isActive={isFilterActive.foodCategory(category.id)}
-              toggleFilter={() => toggleFilter.foodCategory(category.id)}
+              isActive={isFilterActive('foodCategory', category.id)}
+              toggleFilter={() => toggleFilter('foodCategory', category.id)}
             />
           ))}
         </div>
@@ -38,8 +38,8 @@ function Sidebar({ categories }: SidebarProps) {
             <FilterButton
               key={range.value}
               name={range.label}
-              isActive={isFilterActive.deliveryTime(range.value)}
-              toggleFilter={() => toggleFilter.deliveryTime(range.value)}
+              isActive={isFilterActive('deliveryTime', range.value)}
+              toggleFilter={() => toggleFilter('deliveryTime', range.value)}
             />
           ))}
         </div>
@@ -52,8 +52,8 @@ function Sidebar({ categories }: SidebarProps) {
             <FilterButton
               key={range.value}
               name={range.label}
-              isActive={isFilterActive.priceRange(range.value)}
-              toggleFilter={() => toggleFilter.priceRange(range.value)}
+              isActive={isFilterActive('priceRange', range.value)}
+              toggleFilter={() => toggleFilter('priceRange', range.value)}
             />
           ))}
         </div>
